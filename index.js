@@ -1,4 +1,5 @@
-require("dotenv").config(); // ← Add this as the first line
+require("dotenv").config(); // Load environment variables
+
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
@@ -13,6 +14,11 @@ if (!GEMINI_API_KEY) {
   console.error("❌ Gemini API key is missing. Set GEMINI_API_KEY in your .env file.");
   process.exit(1);
 }
+
+// ✅ Health check route for Render
+app.get("/", (req, res) => {
+  res.send("✅ Gemini backend is up and running!");
+});
 
 // === Route: Get Disease Details ===
 app.post("/getDiseaseDetails", async (req, res) => {
