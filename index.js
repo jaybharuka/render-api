@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const GEMINI_API_KEY = "<AIzaSyAWCwgKHIKF4zRtAbJnedd38GGqSEswJBQ>"; // Replace with your Gemini API key
+const GEMINI_API_KEY = "AIzaSyAWCwgKHIKF4zRtAbJnedd38GGqSEswJBQ"; // Replace with your Gemini API key
 
 // === Route: Get Disease Details ===
 app.post("/getDiseaseDetails", async (req, res) => {
