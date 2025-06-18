@@ -18,11 +18,11 @@ app.post("/getDiseaseDetails", async (req, res) => {
   }
 
   try {
-    const prompt = `Suggest common medicines and related symptoms for the disease: ${disease}. \
-    The response should be in clear JSON format with \"symptoms\" and \"medicines\" arrays.`;
+    const prompt = `Suggest common medicines and related symptoms for the disease: ${disease}. 
+The response should be in clear JSON format with "symptoms" and "medicines" arrays.`;
 
     const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${AIzaSyAWCwgKHIKF4zRtAbJnedd38GGqSEswJBQ}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`,
       {
         contents: [{ parts: [{ text: prompt }] }]
       }
