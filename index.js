@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const GEMINI_API_KEY = "<your-AIzaSyAWCwgKHIKF4zRtAbJnedd38GGqSEswJBQ-key-here>"; // Replace with your Gemini API key
+const GEMINI_API_KEY = "<AIzaSyAWCwgKHIKF4zRtAbJnedd38GGqSEswJBQ>"; // Replace with your Gemini API key
 
 // === Route: Get Disease Details ===
 app.post("/getDiseaseDetails", async (req, res) => {
@@ -22,7 +22,7 @@ app.post("/getDiseaseDetails", async (req, res) => {
     The response should be in clear JSON format with \"symptoms\" and \"medicines\" arrays.`;
 
     const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${AIzaSyAWCwgKHIKF4zRtAbJnedd38GGqSEswJBQ}`,
       {
         contents: [{ parts: [{ text: prompt }] }]
       }
